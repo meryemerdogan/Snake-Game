@@ -42,7 +42,7 @@ GameView::GameView(QWidget* parent):QGraphicsView(parent) {
 
     // timer logic
     timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(MoveSlot()));
+    connect(timer, &QTimer::timeout, this, &GameView::MoveSlot);
     timer->start(constants::TICK_INTERVAL);
 }
 void GameView::spawnFood(){
